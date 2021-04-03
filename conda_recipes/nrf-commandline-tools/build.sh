@@ -7,9 +7,16 @@ export TARGET_PREFIX="${PREFIX}/${TARGET}"
 mkdir -p "${PREFIX}"/bin
 mkdir -p "${TARGET_PREFIX}"
 
+# Unpack
 tar -xf nRF-Command-Line-Tools_10_12_1.tar 
 tar -xzf "${JLINK}".tgz
 
+# Remove extra files
+rm -fr "${JLINK}"/Devices
+rm -fr "${JLINK}"/Doc
+rm -fr "${JLINK}"/Samples
+
+# Move to install location
 cp -R mergehex ${TARGET_PREFIX}
 cp -R nrfjprog ${TARGET_PREFIX}
 cp -R ${JLINK} ${TARGET_PREFIX}

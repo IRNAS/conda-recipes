@@ -37,3 +37,30 @@ conda env remove -n <env_name>
 ## Configuration
 
 Create a `environment.yml` file with required packages (look inside this repo for an example) and then run: `conda env update -f environment.yml`.
+
+## Building packages
+
+Look into `conda_recipes` for some inspiration on how to build a conda package.
+After you created required `meta.yml` and `build.sh` you can create a build environment to
+build them and then upload them.
+
+```shell
+conda create -n build
+conda activate build
+conda install -c conda-forge conda-build anaconda-client python=3.7
+conda build .
+# Build command will give you a suggestion for upload
+anaconda upload ...
+```
+
+Lower version of Python is required, due to the error `module 'base64' has no attribute 'encodestring'` inside `anaconda-client` program.
+
+**Important** - command `anaconda upload` can fail silently due to many reasons, there is an issue on GitHub (https://github.com/Anaconda-Platform/anaconda-client/issues/501), where you can find a snipppet of code that you need to paste to a `binstar_client/commands/upload.py` in order to see the actual error.
+
+Errors could be:
+* Expired authorization token
+* Large file
+* Above error with module base64
+* And others.
+
+If the last line of the `anaconda upload` command is `Uploading file "..` and nothing else then the error happened.
