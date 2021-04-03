@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 export TARGET=nrf-command-line-tools
-export JLINK=JLink_Linux_V688a_x86_64
+export JLINK=JLink
 export TARGET_PREFIX="${PREFIX}/${TARGET}"
 
 mkdir -p "${PREFIX}"/bin
@@ -9,7 +9,9 @@ mkdir -p "${TARGET_PREFIX}"
 
 # Unpack
 tar -xf nRF-Command-Line-Tools_10_12_1.tar 
-tar -xzf "${JLINK}".tgz
+tar -xzf JLink_Linux_V688a_x86_64.tgz
+
+mv JLink_Linux_V688a_x86_64 ${JLINK}
 
 # Remove extra files
 rm -fr "${JLINK}"/Devices

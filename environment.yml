@@ -1,8 +1,10 @@
 channels:
   - bbooher
   - conda-forge
+  - markosagadin
 dependencies:
   - make=4.2
+  - nrf-commandline-tools=10.12.1
   - arm-none-eabi-gcc=9.2019.q4.major
   - python=3.8
   - pip
@@ -11,4 +13,4 @@ dependencies:
       - invoke==1.5.0
       - colorama==0.4.4
       - shutils==0.1.0
-      - simple-term-menu==0.10.5
+      - pyinquirer==1.0.3
