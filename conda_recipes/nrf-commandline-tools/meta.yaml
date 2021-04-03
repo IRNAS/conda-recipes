@@ -6,6 +6,30 @@ source:
   sha256: b99558dd631db7f06fe7cfab0a876d352851bbc1e97015432486588b9caf8184
 build:
   string: '0'
+  binary_relocation: False
+  missing_dso_whitelist:
+    - /lib64/libdl.so.2
+    - /lib/libdl.so.2
+    - /lib64/libpthread.so.0
+    - /lib64/libstdc++.so.6
+    - /lib64/libm.so.6
+    - /lib/libm.so.6
+    - /lib64/libgcc_s.so.1
+    - /lib64/libc.so.6
+    - /lib64/librt.so.1
+    - /lib64/ld-linux-x86-64.so.2
+    - $RPATH/libQtCore.so.4
+    - /lib64/libfreetype.so.6
+    - /lib64/libSM.so.6
+    - /lib64/libICE.so.6
+    - /lib64/libXrender.so.1
+    - /lib64/libXrandr.so.2
+    - /lib64/libXfixes.so.3
+    - /lib64/libXcursor.so.1
+    - /lib64/libfontconfig.so.1
+    - /lib64/libXext.so.6
+    - /lib64/libX11.so.6
+    - /lib64/libudev.so.1
 test:
   commands:
     - nrfjprog --version
@@ -13,3 +37,6 @@ test:
 about:
   home: https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Command-Line-Tools
   summary: nRF Command Line Tools
+
+
+ 
