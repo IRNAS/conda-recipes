@@ -32,6 +32,9 @@ conda deactivate
 
 # To remove it
 conda env remove -n <env_name>
+
+# To update environment according to a yml file
+`conda env update -f environment.yml`
 ```
 
 ## Configuration
