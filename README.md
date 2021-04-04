@@ -3,7 +3,7 @@ Conda nRF5
 # Introduction
 
 This is a simple repository that shows how to setup Conda enviroment for building nrf5 projects.
-The main inspiration for this repository was a great blog on a great blog website Interrupt: https://interrupt.memfault.com/blog/conda-developer-environments
+The main inspiration for this repository was a great blog on a great blog Interrupt: https://interrupt.memfault.com/blog/conda-developer-environments
 
 
 # Instructions
