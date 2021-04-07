@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-rm /opt/SEGGER/JLink
-
+unset INVOKE_JDLL_PATH
+unalias nrfjprog

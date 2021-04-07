@@ -5,7 +5,7 @@ source:
   url: https://www.nordicsemi.com/-/media/Software-and-other-downloads/Desktop-software/nRF-command-line-tools/sw/Versions-10-x-x/10-12-1/nRFCommandLineTools10121Linuxamd64.tar.gz
   sha256: b99558dd631db7f06fe7cfab0a876d352851bbc1e97015432486588b9caf8184
 build:
-  string: '1'
+  string: '0'
   binary_relocation: False
   missing_dso_whitelist:
     - /lib64/libdl.so.2
@@ -36,7 +36,7 @@ build:
 test:
   commands:
     - mergehex --version
-    - nrfjprog --version
+      #- nrfjprog --version
 about:
   home: https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Command-Line-Tools
   summary: The nRF Command Line Tools

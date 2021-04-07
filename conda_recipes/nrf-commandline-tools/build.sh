@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+# Copy the [de]activate scripts to $PREFIX/etc/conda/[de]activate.d.
+# This will allow them to be run on environment activation.
+for CHANGE in "activate" "deactivate"
+do
+    mkdir -p "${PREFIX}/etc/conda/${CHANGE}.d"
+    cp "${RECIPE_DIR}/${CHANGE}.sh" "${PREFIX}/etc/conda/${CHANGE}.d/${PKG_NAME}_${CHANGE}.sh"
+done
+
 export TARGET=nrf-command-line-tools
 export JLINK=JLink
 export TARGET_PREFIX="${PREFIX}/${TARGET}"
@@ -25,8 +33,6 @@ cp -R ${JLINK} ${TARGET_PREFIX}
 
 # Symlink every binary from the build into /bin
 pushd "${PREFIX}"/bin
-    ln -s ../"${TARGET}"/mergehex/mergehex ./
-    ln -s ../"${TARGET}"/nrfjprog/nrfjprog ./
     ln -s ../"${TARGET}"/"${JLINK}"/JLinkExe ./
     ln -s ../"${TARGET}"/"${JLINK}"/JLinkGDBServer ./
     ln -s ../"${TARGET}"/"${JLINK}"/JLinkRTTClient ./
@@ -34,4 +40,6 @@ pushd "${PREFIX}"/bin
     ln -s ../"${TARGET}"/"${JLINK}"/JLinkRTTViewerExe ./
     ln -s ../"${TARGET}"/"${JLINK}"/JLinkRemoteServer ./
     ln -s ../"${TARGET}"/"${JLINK}"/JLinkSWOViewer ./
+    ln -s ../"${TARGET}"/mergehex/mergehex ./
+    ln -s ../"${TARGET}"/nrfjprog/nrfjprog ./
 popd

@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-ln -s "${PREFIX}"/nrf-commandline-tools/JLink /opt/SEGGER/JLink
+export INVOKE_JDLL_PATH="${CONDA_PREFIX}/nrf-command-line-tools/JLink/libjlinkarm.so"
+alias nrfjprog="nrfjprog --jdll ${CONDA_PREFIX}/nrf-command-line-tools/JLink/libjlinkarm.so"
