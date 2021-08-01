@@ -15,11 +15,20 @@ export TARGET_PREFIX="${PREFIX}/${TARGET}"
 mkdir -p "${PREFIX}"/bin
 mkdir -p "${TARGET_PREFIX}"
 
-# Unpack
-tar -xf nRF-Command-Line-Tools_10_12_1.tar 
-tar -xzf JLink_Linux_V688a_x86_64.tgz
+# Unpack, the zip that you donwload gets unzipped in the process.
+tar -xzvf nRF-Command-Line-Tools*.tar.gz
 
-mv JLink_Linux_V688a_x86_64 ${JLINK}
+tar -xf nRF-Command-Line-Tools*.tar 
+tar -xzf JLink_Linux*.tgz
+
+# Cleanup
+rm nRF-Command-Line-Tools*.tar.gz
+rm nRF-Command-Line-Tools*.tar 
+rm nRF-Command-Line-Tools*.deb
+rm JLink_Linux*.tgz
+rm JLink_Linux*.deb
+
+mv JLink_Linux_V* ${JLINK}
 
 # Remove extra files
 rm -fr "${JLINK}"/Devices
