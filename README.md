@@ -55,7 +55,14 @@ anaconda upload ...
 
 Lower version of Python is required, due to the error `module 'base64' has no attribute 'encodestring'` inside `anaconda-client` program.
 
-**Important** - command `anaconda upload` can fail silently due to many reasons, there is an issue on GitHub (https://github.com/Anaconda-Platform/anaconda-client/issues/501), where you can find a snipppet of code that you need to paste to a `binstar_client/commands/upload.py` in order to see the actual error.
+### Creating sha256sum
+
+I have no idea how to do this properly.
+You can first set random sha in `meta.yaml` and then run `conda build .`, which will tell you the actual sha, you can just copy it from there.
+
+### Troubleshooting building packages
+
+Command `anaconda upload` can fail silently due to many reasons, there is an issue on GitHub (https://github.com/Anaconda-Platform/anaconda-client/issues/501), where you can find a snipppet of code that you need to paste to a `binstar_client/commands/upload.py` in order to see the actual error.
 
 Errors could be:
 * Expired authorization token
