@@ -15,20 +15,22 @@ export TARGET_PREFIX="${PREFIX}/${TARGET}"
 mkdir -p "${PREFIX}"/bin
 mkdir -p "${TARGET_PREFIX}"
 
-# Unpack, the zip that you donwload gets unzipped in the process.
-tar -xzvf nRF-Command-Line-Tools*.tar.gz
+# Unpack, the zip that you download gets unzipped in the process.
+tar -xzvf nrf-command-line-tools*.tar.gz
 
-tar -xf nRF-Command-Line-Tools*.tar 
 tar -xzf JLink_Linux*.tgz
 
 # Cleanup
-rm nRF-Command-Line-Tools*.tar.gz
-rm nRF-Command-Line-Tools*.tar 
-rm nRF-Command-Line-Tools*.deb
+rm nrf-command-line-tools*.tar.gz
+rm nrf-command-line-tools*.deb
+rm nrf-command-line-tools*.rpm
+rm pynrfjprog*.zip
 rm JLink_Linux*.tgz
 rm JLink_Linux*.deb
+rm README.txt
+rm ReadMe.txt
 
-mv JLink_Linux_V* ${JLINK}
+mv JLink_Linux* ${JLINK}
 
 # Remove extra files
 rm -fr "${JLINK}"/Devices
@@ -36,8 +38,8 @@ rm -fr "${JLINK}"/Doc
 rm -fr "${JLINK}"/Samples
 
 # Move to install location
-cp -R mergehex ${TARGET_PREFIX}
-cp -R nrfjprog ${TARGET_PREFIX}
+cp -R nrf-command-line-tools/bin/mergehex ${TARGET_PREFIX}
+cp -R nrf-command-line-tools/bin/nrfjprog ${TARGET_PREFIX}
 cp -R ${JLINK} ${TARGET_PREFIX}
 
 # Symlink every binary from the build into /bin

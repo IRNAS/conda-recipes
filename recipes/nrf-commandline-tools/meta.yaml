@@ -1,9 +1,9 @@
 package:
   name: nrf-commandline-tools
-  version: 10.13.0
+  version: 10.14.0
 source:
-  url: https://www.nordicsemi.com/-/media/Software-and-other-downloads/Desktop-software/nRF-command-line-tools/sw/Versions-10-x-x/10-13-0/nRF-Command-Line-Tools_10_13_0_Linux64.zip
-  sha256: 64a7ce58facea02cc036da8d8ad61a1b56d6f518c7e76dc2c1f2fc9d507a8233
+  url: https://www.nordicsemi.com/-/media/Software-and-other-downloads/Desktop-software/nRF-command-line-tools/sw/Versions-10-x-x/10-14-0/nRF-Command-Line-Tools_10_14_0_Linux64.zip
+  sha256: ad2a733da33e8c5f3cb16ae122d69b30d3919ac41302d9d40df8c61e0a22fa84
 build:
   string: '0'
   binary_relocation: False
