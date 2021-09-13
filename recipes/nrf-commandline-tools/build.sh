@@ -51,6 +51,6 @@ pushd "${PREFIX}"/bin
     ln -s ../"${TARGET}"/"${JLINK}"/JLinkRTTViewerExe ./
     ln -s ../"${TARGET}"/"${JLINK}"/JLinkRemoteServer ./
     ln -s ../"${TARGET}"/"${JLINK}"/JLinkSWOViewer ./
-    ln -s ../"${TARGET}"/mergehex/mergehex ./
-    ln -s ../"${TARGET}"/nrfjprog/nrfjprog ./
+    ln -s ../"${TARGET}"/mergehex ./
+    ln -s ../"${TARGET}"/nrfjprog ./
 popd
