@@ -47,7 +47,8 @@ build them and then upload them.
 ```shell
 conda create -n build
 conda activate build
-conda install -c conda-forge conda-build anaconda-client python=3.7
+conda install -c conda-forge conda-build anaconda-client python=3.7 nlohmann_json protobuf grpc-cpp fmt spdlog pkg-config
+conda install -c markosagadin abseil-cpp
 conda build .
 # Build command will give you a suggestion for upload
 anaconda upload ...

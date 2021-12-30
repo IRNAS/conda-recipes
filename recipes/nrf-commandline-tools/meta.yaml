@@ -1,9 +1,9 @@
 package:
   name: nrf-commandline-tools
-  version: 10.14.0
+  version: 10.15.0
 source:
-  url: https://www.nordicsemi.com/-/media/Software-and-other-downloads/Desktop-software/nRF-command-line-tools/sw/Versions-10-x-x/10-14-0/nRF-Command-Line-Tools_10_14_0_Linux64.zip
-  sha256: ad2a733da33e8c5f3cb16ae122d69b30d3919ac41302d9d40df8c61e0a22fa84
+  url: https://www.nordicsemi.com/-/media/Software-and-other-downloads/Desktop-software/nRF-command-line-tools/sw/Versions-10-x-x/10-15-0/nrf-command-line-tools-10.15.0_amd.zip
+  sha256: e30b1c94508afe70ea3ad5eefb6b9914ee70b9dce17f14412bcbbb53d1aad9bd
 build:
   string: '0'
   binary_relocation: False
@@ -36,7 +36,7 @@ build:
 test:
   commands:
     - mergehex --version
-      #- nrfjprog --version
+    - nrfjprog --jdll ${CONDA_PREFIX}/nrf-command-line-tools/JLink/libjlinkarm.so --version
 about:
   home: https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Command-Line-Tools
   summary: The nRF Command Line Tools
