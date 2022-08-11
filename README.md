@@ -16,6 +16,22 @@ bash Miniconda3-latest-*-x86_64.sh
 conda config --set auto_activate_base false
 ```
 
+## Quick start
+
+Open terminal from the root of the project which uses Conda as a package
+manager, aka. has `environment.yaml` in its root.
+
+```shell
+# Create new enviroment
+conda create -n <env_name>
+
+# To activate it, shell alias is preferred
+conda activate <env_name>
+
+# To update environment according to a yml file
+conda env update -f environment.yml
+```
+
 ## Usage
 ```shell
 # Create new environment
